@@ -20,7 +20,7 @@ public class MovieDTO {
     private String poster;
     private List<RatingDTO> ratings;
     private int metascore;
-    private float imdbRating;
+    private float imdbrating;
     private String type;
 
     @Data
