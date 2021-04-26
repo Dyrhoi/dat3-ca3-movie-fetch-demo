@@ -22,6 +22,7 @@ public class MovieDTO {
     private int Metascore;
     private float imdbRating;
     private String Type;
+    private String imdbID;
 
     @Data
     private class RatingDTO {
