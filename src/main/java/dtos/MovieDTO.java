@@ -6,26 +6,26 @@ import java.util.List;
 
 @Data
 public class MovieDTO {
-    private String title;
-    private int year;
-    private String rated;
-    private String released;
-    private String runtime;
-    private String genre;
-    private String director;
-    private String writer;
-    private String actors;
-    private String plot;
-    private String awards;
-    private String poster;
-    private List<RatingDTO> ratings;
-    private int metascore;
-    private float imdbrating;
-    private String type;
+    private String Title;
+    private int Year;
+    private String Rated;
+    private String Released;
+    private String Runtime;
+    private String Genre;
+    private String Director;
+    private String Writer;
+    private String Actors;
+    private String Plot;
+    private String Language;
+    private String Poster;
+    private List<RatingDTO> Ratings;
+    private int Metascore;
+    private float imdbRating;
+    private String Type;
 
     @Data
     private class RatingDTO {
-        private String source;
-        private String value;
+        private String Source;
+        private String Value;
     }
 }

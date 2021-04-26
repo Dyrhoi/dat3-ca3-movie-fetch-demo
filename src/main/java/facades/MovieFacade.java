@@ -42,7 +42,7 @@ public class MovieFacade {
     private final String API_KEY = "3654c4b6";
     private final String API_URL = "http://www.omdbapi.com/";
 
-    private final Gson GSON = new GsonBuilder().setPrettyPrinting().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_DASHES).create();
+    private final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public MovieDTO getMovie(String id)  {
         String query = "?i=" + id;
