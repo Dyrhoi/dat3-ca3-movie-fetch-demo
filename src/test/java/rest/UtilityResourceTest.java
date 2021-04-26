@@ -19,8 +19,7 @@ import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class UtilityResourceTest {
 
@@ -81,7 +80,7 @@ public class UtilityResourceTest {
                 .when()
                 .get("/util/populate").then()
                 .statusCode(200)
-                .body("populated", contains("users"));
+                .body("populated", hasItem("users"));
     }
 
 
