@@ -2,6 +2,7 @@ package utils;
 
 
 import com.google.common.base.Strings;
+import facades.MovieFacade;
 import facades.UserFacade;
 
 import javax.persistence.EntityManager;
@@ -27,6 +28,8 @@ public class Populate {
         List<String> populated = new ArrayList<>();
         if(populateUsers())
             populated.add("users");
+        if(populateMovies())
+            populated.add("movies");
 
         return populated;
     }
@@ -57,6 +60,17 @@ public class Populate {
 
         userFacade.create("user", password_user, new ArrayList<>());
         userFacade.create("admin", password_admin, Collections.singletonList("admin"));
+
+        return true;
+    }
+
+    public boolean populateMovies() throws IllegalArgumentException {
+        MovieFacade movieFacade = MovieFacade.getInstance(this.emf);
+
+        if (!movieFacade.getAllMovies().isEmpty()) return false;
+
+        movieFacade.createMovie("tt1663202"); // The Revenant.
+        movieFacade.createMovie("tt0993846"); // The Wolf of Wallstreet.
 
         return true;
     }
